@@ -1,9 +1,7 @@
-server:
-  port: 8081
-
 spring:
   application:
-    name: fraud
+    name: eureka-server
+
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -16,3 +14,17 @@ spring:
     show-sql: true
     generate-ddl: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
+
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+
+
+
+
+
