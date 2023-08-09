@@ -3,7 +3,7 @@ package lk.epic.customer;
 import org.springframework.stereotype.Service;
 
 @Service
-public record CustomerService() {
+public record CustomerService(CustomerRepository repository) {
 
     public void registerCustomer(CustomerRegistrationRequest request) {
 
@@ -12,6 +12,8 @@ public record CustomerService() {
                 .lastname(request.lastname())
                 .email(request.email())
                 .build();
+
+        repository.save(customer);
 
     }
 }
